@@ -1,0 +1,415 @@
+{
+  "title": "Anpassungen für die HOB VPN-Verbindung.",
+  "rules": [
+    {
+      "description": "Tasten 'z' unf 'y' tauschen.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "y",
+              "modifiers": [ "any" ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "z",
+            "modifiers": [ "any" ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Option + Pfeil zum Navigieren durch Wörtern (OSX-style).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_arrow",
+            "modifiers": {
+              "mandatory": [ "left_option" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_arrow",
+            "modifiers": {
+              "mandatory": [ "left_option" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "up_arrow",
+            "modifiers": {
+              "mandatory": [ "left_option" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "down_arrow",
+            "modifiers": {
+              "mandatory": [ "left_option" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Cmd-Taste in Windows-Taste umwandeln.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command"
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape",
+              "modifiers": [ "left_control" ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape",
+              "modifiers": [ "left_control" ]
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Gleich-Zeichen aktivieren (benötigt 'HOB Remapper.exe' auf dem Remote-Rechner).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [ "right_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_0"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [ "left_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_0"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Groeßer-/Kleiner-Zeichen aktivieren (benötigt 'HOB Remapper.exe' auf dem Remote-Rechner).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde"
+          },
+          "to": [
+            {
+              "key_code": "keypad_1"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [ "right_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_2"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [ "left_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_2"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Geschweifte Klammer schließen (benötigt 'HOB Remapper.exe' auf dem Remote-Rechner).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [ "left_control", "left_option"	 ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_3"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    },
+    {
+      "description": "Zirkumflex-/Grad-Zeichen aktivieren (funktioniert noch nicht).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "non_us_backslash"
+          },
+          "to": [
+            {
+              "key_code": "keypad_3"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "non_us_backslash",
+            "modifiers": {
+              "mandatory": [ "right_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_4"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "non_us_backslash",
+            "modifiers": {
+              "mandatory": [ "left_shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "keypad_4"
+            }
+          ],
+          "conditions": [
+          {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                  "^net\\.java\\.openjdk\\.cmd$"
+              ]
+          }]
+        }
+      ]
+    }
+  ]
+}
