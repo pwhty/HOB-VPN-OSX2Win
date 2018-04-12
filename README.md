@@ -15,6 +15,7 @@ When accessing a Windows machine over HOB VPN, some keys and key combinations wi
 |^ and ° not working|**not solved**|
 
 There are also some combinations that look like they don't work on first sight, but they actually do:
+
 |Key/Key Combination|Out Of The Box Solution|
 |---|---|
 |@|Left_Control + Left_Option + q (Left_Control + Left_Option = AltGr)|
