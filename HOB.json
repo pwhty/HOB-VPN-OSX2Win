@@ -407,8 +407,29 @@
               "bundle_identifiers": [
                   "^net\\.java\\.openjdk\\.cmd$"
               ]
-          }]
-        }
+          }
+		  ]
+        },
+		{
+		  "description": "Pipe-Symbol aktivieren (benötigt 'HOB Remapper.exe' auf dem Remote-Rechner).",
+		  "manipulators": [
+			{
+			  "type": "basic",
+			  "from": {
+				"key_code": "grave_accent_and_tilde",
+				"modifiers": {
+				  "mandatory": [ "left_control", "left_option" ]
+				}
+			  },
+			  "to": [
+				{
+				  "key_code": "keypad_5",
+				  "modifiers": []
+				}
+			  ]
+			}
+		  ]    
+		}
       ]
     }
   ]

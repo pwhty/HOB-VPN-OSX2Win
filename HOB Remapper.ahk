@@ -13,3 +13,7 @@ Return
 Numpad3::
    SendRaw, }
 Return
+
+Numpad5::
+	Send, |
+Return
